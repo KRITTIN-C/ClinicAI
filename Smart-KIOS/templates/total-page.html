@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="UTF-8" />
-
+  <title>Questionnaire</title>
   <style>
     * {
       box-sizing: border-box;
@@ -45,6 +45,22 @@
       margin-top: 5%;
       margin-left: 25%;
       /* filter: none; */
+    }
+    img.finish {
+      position: absolute;
+      bottom: 10px;
+      /* ปรับค่าตำแหน่งของปุ่มจากด้านล่าง */
+      right: 10px;
+      /* ปรับค่าตำแหน่งของปุ่มจากด้านขวา */
+      width: 60px;
+      /* ปรับขนาดของรูปตามที่ต้องการ */
+      height: 60px;
+      /* ให้รูปปรับสัดส่วนตามขนาดที่กำหนด */
+      border: none;
+      /* ลบแบรนด์ (border) ทั้งหมด */
+      border-radius: 50%;
+      /* ทำให้มุมของปุ่มเป็นรูปวงกลม */
+      margin: 0;
     }
 
     /* Slideshow container */
@@ -220,7 +236,7 @@
       }
     }
 
-    #inputField {
+    .input-field {
       border: 1px solid #ccc;
       /* background-color: #fff; */
       font-size: larger;
@@ -235,7 +251,6 @@
       position: absolute;
       bottom: 0;
       left: 0;
-
       width: 100%;
       /* background-color: #f2f2f2; */
       /* border-top: 1px solid #ccc; */
@@ -386,7 +401,7 @@
         z-index: 1;
       }
 
-      #inputField {
+      .input-field {
       border: 1px solid #ccc;
       /* background-color: #fff; */
       font-size: larger;
@@ -486,7 +501,7 @@
         z-index: 1;
       }
 
-      #inputField {
+      .input-field {
       border: 1px solid #ccc;
       /* background-color: #fff; */
       font-size: larger;
@@ -596,7 +611,7 @@
             margin-bottom: 70px; */
       }
 
-      #inputField {
+      .input-field {
       border: 1px solid #ccc;
       /* background-color: #fff; */
       font-size: larger;
@@ -697,7 +712,7 @@
         transition: all 0.3s ease;
       }
 
-      #inputField {
+      .input-field {
       border: 1px solid #ccc;
       /* background-color: #fff; */
       font-size: larger;
@@ -770,9 +785,9 @@
         <div class="text" id="Question1"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField1" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row1">
               <div class="answer" onclick="selectAnswer(this, 1)" id="1"></div>
               <div class="answer" onclick="selectAnswer(this, 2)" id="2"></div>
               <div class="answer" onclick="selectAnswer(this, 3)" id="3"></div>
@@ -787,9 +802,9 @@
         <div class="text" id="Question2"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField2" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row2">
               <div class="answer" onclick="selectAnswer(this, 5)" id="5"></div>
               <div class="answer" onclick="selectAnswer(this, 6)" id="6"></div>
               <div class="answer" onclick="selectAnswer(this, 7)" id="7"></div>
@@ -804,9 +819,9 @@
         <div class="text" id="Question3"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField3" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row3">
               <div class="answer" onclick="selectAnswer(this, 9)" id="9"></div>
               <div class="answer" onclick="selectAnswer(this, 10)" id="10"></div>
               <div class="answer" onclick="selectAnswer(this, 11)" id="11"></div>
@@ -821,9 +836,9 @@
         <div class="text" id="Question4"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField4" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row4">
               <div class="answer" onclick="selectAnswer(this, 13)" id="13"></div>
               <div class="answer" onclick="selectAnswer(this, 14)" id="14"></div>
               <div class="answer" onclick="selectAnswer(this, 15)" id="15"></div>
@@ -838,9 +853,9 @@
         <div class="text" id="Question5"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField5" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row5">
               <div class="answer" onclick="selectAnswer(this, 17)" id="17"></div>
               <div class="answer" onclick="selectAnswer(this, 18)" id="18"></div>
               <div class="answer" onclick="selectAnswer(this, 19)" id="19"></div>
@@ -855,9 +870,9 @@
         <div class="text" id="Question6"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField6" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row6">
               <div class="answer" onclick="selectAnswer(this, 21)" id="21"></div>
               <div class="answer" onclick="selectAnswer(this, 22)" id="22"></div>
               <div class="answer" onclick="selectAnswer(this, 23)" id="23"></div>
@@ -871,9 +886,9 @@
         <div class="text" id="Question7"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField7" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row7">
               <div class="answer" onclick="selectAnswer(this, 25)" id="25"></div>
               <div class="answer" onclick="selectAnswer(this, 26)" id="26"></div>
               <div class="answer" onclick="selectAnswer(this, 27)" id="27"></div>
@@ -888,9 +903,9 @@
         <div class="text" id="Question8"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField8" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row8">
               <div class="answer" onclick="selectAnswer(this, 29)" id="29"></div>
               <div class="answer" onclick="selectAnswer(this, 30)" id="30"></div>
               <div class="answer" onclick="selectAnswer(this, 31)" id="31"></div>
@@ -905,9 +920,9 @@
         <div class="text" id="Question9"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField9" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
+            <div class="grid-row typing" id="grid-row9">
               <div class="answer" onclick="selectAnswer(this, 33)" id="33"></div>
               <div class="answer" onclick="selectAnswer(this, 34)" id="34"></div>
               <div class="answer" onclick="selectAnswer(this, 35)" id="35"></div>
@@ -921,16 +936,52 @@
         <div class="text" id="Question10"></div>
         <form action="/answer" method="POST">
           <div class="grid-container">
-            <input id="inputField" class="input-field" contenteditable="true"
+            <input id="inputField10" class="input-field" contenteditable="true"
               placeholder="สามารถกรอกคำตอบอื่นๆได้ครับ"></input>
-            <div class="grid-row typing">
-
+            <div class="grid-row typing" id="grid-row10">
+              <div class="answer" onclick="selectAnswer(this, 37)" id="37"></div>
+              <div class="answer" onclick="selectAnswer(this, 38)" id="38"></div>
+              <div class="answer" onclick="selectAnswer(this, 39)" id="39"></div>
+              <div class="answer" onclick="selectAnswer(this, 40)" id="40"></div>
             </div>
           </div>
         </form>
+        <img
+            class="finish"
+            src="pic\finish.png"
+            alt="microphone disconnect"
+            onclick="finish()"
+          />
+          <script>
+            function finish() {
+              // ดึงข้อมูลจาก query parameter
+              const queryParams = new URLSearchParams(window.location.search);
+              const userID = queryParams.get("userID");
+
+              // สร้าง URL พร้อมกับพารามิเตอร์
+              var url = "pressure.html?userID=" + userID;
+
+              // ลิ้งไปยังหน้าเว็บใหม่
+              window.location.href = url;
+            }
+          </script>
       </div>
 
       <div id="keyboard-container">
+        <div class="keyboard-row">
+          <div class="keyboard-key lowercase">ๅ</div>
+          <div class="keyboard-key lowercase">/</div>
+          <div class="keyboard-key lowercase">-</div>
+          <div class="keyboard-key lowercase">ภ</div>
+          <div class="keyboard-key lowercase">ถ</div>
+          <div class="keyboard-key lowercase">ุ</div>
+          <div class="keyboard-key lowercase">ึ</div>
+          <div class="keyboard-key lowercase">ค</div>
+          <div class="keyboard-key lowercase">ต</div>
+          <div class="keyboard-key lowercase">จ</div>
+          <div class="keyboard-key lowercase">ข</div>
+          <div class="keyboard-key lowercase">ช</div>
+        </div>
         <div class="keyboard-row">
           <div class="keyboard-key lowercase">ๆ</div>
           <div class="keyboard-key lowercase">ไ</div>
@@ -944,6 +995,7 @@
           <div class="keyboard-key lowercase">ย</div>
           <div class="keyboard-key lowercase">บ</div>
           <div class="keyboard-key lowercase">ล</div>
+          <div class="keyboard-key lowercase">ฃ</div>
         </div>
         <div class="keyboard-row">
           <div class="keyboard-key lowercase">ฟ</div>
@@ -955,10 +1007,13 @@
           <div class="keyboard-key lowercase">่</div>
           <div class="keyboard-key lowercase">า</div>
           <div class="keyboard-key lowercase">ส</div>
+          <div class="keyboard-key lowercase">ว</div>
+          <div class="keyboard-key lowercase">ง</div>
         </div>
         <div class="keyboard-row">
           <div class="keyboard-key lowercase">ผ</div>
           <div class="keyboard-key lowercase">ป</div>
+          <div class="keyboard-key lowercase">อ</div>
           <div class="keyboard-key lowercase">แ</div>
           <div class="keyboard-key lowercase">ิ</div>
           <div class="keyboard-key lowercase">ื</div>
@@ -966,6 +1021,20 @@
           <div class="keyboard-key lowercase">ม</div>
           <div class="keyboard-key lowercase">ใ</div>
           <div class="keyboard-key lowercase">ฝ</div>
+        </div>
+        <div class="keyboard-row">
+          <div class="keyboard-key uppercase">+</div>
+          <div class="keyboard-key uppercase">๑</div>
+          <div class="keyboard-key uppercase">๒</div>
+          <div class="keyboard-key uppercase">๓</div>
+          <div class="keyboard-key uppercase">๔</div>
+          <div class="keyboard-key uppercase">ู</div>
+          <div class="keyboard-key uppercase">฿</div>
+          <div class="keyboard-key uppercase">๕</div>
+          <div class="keyboard-key uppercase">๖</div>
+          <div class="keyboard-key uppercase">๗</div>
+          <div class="keyboard-key uppercase">๘</div>
+          <div class="keyboard-key uppercase">๙</div>
         </div>
         <div class="keyboard-row">
           <div class="keyboard-key uppercase">๐</div>
@@ -980,6 +1049,7 @@
           <div class="keyboard-key uppercase">ญ</div>
           <div class="keyboard-key uppercase">ฐ</div>
           <div class="keyboard-key uppercase">,</div>
+          <div class="keyboard-key uppercase">ฅ</div>
         </div>
         <!-- ซ้ำสำหรับแถวอื่น ๆ ของ keyboard -->
         <div class="keyboard-row">
@@ -992,6 +1062,8 @@
           <div class="keyboard-key uppercase">๋</div>
           <div class="keyboard-key uppercase">ษ</div>
           <div class="keyboard-key uppercase">ศ</div>
+          <div class="keyboard-key uppercase">ซ</div>
+          <div class="keyboard-key uppercase">.</div>
         </div>
         <!-- ซ้ำสำหรับแถวอื่น ๆ ของ keyboard -->
         <div class="keyboard-row">
@@ -1011,7 +1083,7 @@
         <!-- ซ้ำสำหรับแถวอื่น ๆ ของ keyboard -->
         <div class="keyboard-row">
           <div class="keyboard-key shift">↑</div>
-          <div class="keyboard-key enter">Enter</div>
+          <div class="keyboard-key enter" >Enter</div>
           <div class="keyboard-key backspace">←</div>
         </div>
       </div>
@@ -1038,8 +1110,19 @@
   <!-- </div> -->
 
   <script>
-    let slideIndex = 1;
+    const show = new URLSearchParams(window.location.search);
+    const page = parseInt(show.get("page")); // แปลงค่า page เป็นตัวเลขจาก string
     let prevSlideIndex = [];
+    // ตรวจสอบว่า page เป็นตัวเลขและมีค่ามากกว่า 1 หรือไม่
+    if (!isNaN(page) && page > 1) {
+      for (let i = page; i >= 1; i--) {
+          prevSlideIndex.push(i);
+      }
+    }
+
+    console.log(prevSlideIndex); // พิมพ์ค่า prevSlideIndex ที่ได้
+    let slideIndex = page;
+    
     showSlides(slideIndex);
 
     function plusSlides(n) {
@@ -1134,6 +1217,13 @@
       console.log("Slide Index: ", slideIndex);
       sendAnswerToServer(valueInsideElement, slideIndex);
     }
+    function handleEnterClick(text) {
+      
+      // นำข้อมูลที่ผู้ใช้กรอกเข้าไปในการประมวลผลต่อไป
+      console.log("ข้อมูลที่ป้อน:", text);
+      sendAnswerToServer(text, slideIndex);
+      // สามารถเพิ่มโค้ดเพื่อประมวลผลข้อมูลต่อไปตามต้องการ
+  }
 
     function sendAnswerToServer(text, questionId) {
       // ดึงข้อมูลจาก query parameter
@@ -1187,33 +1277,43 @@
         .then((result) => console.log(result))
         .catch((error) => console.error(error));
     }
-    var inputField = document.getElementById('inputField');
+    //var inputField = document.getElementById('inputField');
     var keyboardContainer = document.getElementById('keyboard-container');
     var showLowercase = document.getElementsByClassName('lowercase');
-    var gridRow = document.getElementsByClassName('grid-row')[0]; // ใช้ index [0] เพื่อเข้าถึง element เดียวเท่านั้น
+    //var gridRow = document.getElementById(`grid-row${slideIndex}`); // ใช้ index [0] เพื่อเข้าถึง element เดียวเท่านั้น
     var isUpperCase = false;
 
-    inputField.addEventListener('click', function () {
-      keyboardContainer.style.display = 'block';
-      keyboardContainer.classList.add('show-lowercase');
-      // showLowercase.style.display = 'block';
-      keyboardContainer.style.marginBottom = '5%';
-      inputField.style.width = '60%';
-      inputField.style.height = '10%';
-      gridRow.style.display = 'none';
-      inputField.style.marginBottom = '30%';
-      // if(showLowercase.style.display = 'none') {
-      //     showLowercase.style.display = 'block';
-      // }
-      // keyboardContainer.classList.toggle('show-lowercase');
-
+    document.querySelectorAll('.input-field').forEach(function (inputField) {
+      inputField.addEventListener('click', function () {
+        var inputField = document.getElementById(`inputField${slideIndex}`);
+        var inputField10 = document.getElementById(`inputField10`);
+        //inputField10.style.width = '60%';
+        //inputField10.style.height = '10%';
+        //inputField10.style.marginBottom = '30%';
+        //inputField10.style.display = 'block';
+        keyboardContainer.style.display = 'block';
+        keyboardContainer.classList.add('show-lowercase');
+        // showLowercase.style.display = 'block';
+        keyboardContainer.style.marginBottom = '5%';
+        inputField.style.width = '60%';
+        inputField.style.height = '10%';
+        var gridRow = document.getElementById(`grid-row${slideIndex}`);
+        gridRow.style.display = 'none';
+        //var gridRow10 = document.getElementById(`grid-row10`);
+        //gridRow10.style.display = 'none';
+        inputField.style.marginBottom = '30%';
+        // if(showLowercase.style.display = 'none') {
+        //     showLowercase.style.display = 'block';
+        // }
+        // keyboardContainer.classList.toggle('show-lowercase');
+        });
     });
 
     document.querySelectorAll('.keyboard-key').forEach(function (key) {
       key.addEventListener('click', function () {
         var char = this.textContent;
-
-        if (char === 'Backspace') {
+        var inputField = document.getElementById(`inputField${slideIndex}`);
+        if (char === '←') {
           var currentText = inputField.textContent || inputField.value;
           inputField.value = currentText.slice(0, -1);
         } else if (char === 'Enter') {
@@ -1222,12 +1322,16 @@
           keyboardContainer.classList.remove('show-lowercase');
           keyboardContainer.classList.remove('show-uppercase');
           keyboardContainer.style.display = 'none';
-          inputField.style.marginBottom = '0%';
+          var gridRow = document.getElementById(`grid-row${slideIndex}`);
+          //inputField.style.marginBottom = '';
           gridRow.style.display = 'grid';
-          inputField.style.height = '15%';
-          inputField.style.width = '40%';
+          inputField.style.removeProperty('margin-bottom'); // ลบคุณสมบัติ margin-bottom ทั้งหมด
+          
+          handleEnterClick(inputField.value)
+          //inputField.style.height = '15%';
+          //inputField.style.width = '40%';
         }
-        else if (char === 'Shift') {
+        else if (char === '↑') {
           var currentText = inputField.textContent || inputField.value;
           inputField.value = currentText + '';
         } else {
@@ -1271,12 +1375,12 @@
     });
 
     document.addEventListener('keydown', function (event) {
-      if ((event.code === 'Shift') && document.activeElement !== inputField) {
+      if ((event.code === '↑') && document.activeElement !== inputField) {
         event.preventDefault();
         event.stopPropagation();
       }
 
-      if ((event.code === 'Shift') && document.activeElement === inputField) {
+      if ((event.code === '↑') && document.activeElement === inputField) {
         event.preventDefault();
       }
     });
